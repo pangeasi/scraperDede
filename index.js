@@ -1,5 +1,3 @@
-import { cookiesDixmax } from './server/cookies/dixmax.cookies';
-import { megadedeCookies } from './server/cookies/megadede.cookies';
 const express = require('express')
 const request = require('request')
 const cors = require('cors')
@@ -9,6 +7,7 @@ const app = express()
 app.use(cors())
 
 
+const cookiesDixmax = () => cookie
 const addAuthorizationHeader = () => {
     let headers= {}
     headers.Authorization = "Bearer " + MASTODON_TOKEN;
@@ -193,28 +192,6 @@ app.get('/adede', (req, res) => {
           }
     })
     request({url: `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage?chat_id=360762343&text=${message}`})
-})
-
-app.get('/bdede/:term', async(req, res) => {
-    const url = `https://www.megadede.com/search/ac/${req.params.term}`
-    let jar = request.jar()
-    megadedeCookies().map(c => {
-        let cookie = request.cookie(`${c.name}=${c.value}`)
-        jar.setCookie(cookie, url)
-    })
-    
-    request({
-        url,
-        method: 'get',
-        jar,
-    },(err,response,body) => {
-        if (!err && response.statusCode == 200) {
-            let info =  body.includes('{') ? JSON.parse(body) : []
-            res.set('content-type', 'application/json')
-            res.status(200).send(info)
-          }
-    })
-    
 })
 
 app.get('/account', (req, res) => {
