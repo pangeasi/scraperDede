@@ -1,1 +1,65 @@
-{"version":2,"name":"scraperDEDE","builds":[{"src":"package.json","use":"@now/static-build"}]}
+{
+    "version":2,
+    "alias": "scraperdede.now.sh",
+    "name":"scraperDEDE",
+    "routes": [
+        { 
+            "src": "/?term=(.*)",
+            "dest": "search/index.js" 
+        },
+        { 
+            "src": "/?term=(.*)&is=(.*)&s=(.*)&e=(.*)",
+            "dest": "adede/index.js" 
+        },
+        { 
+            "src": "/?id=(.*)",
+            "dest": "search-api/index.js" 
+        },
+        { 
+            "src": "/?id=(.*)&s=(.*)",
+            "dest": "search-episodes/index.js" 
+        },
+        { 
+            "src": "/?term=(.*)",
+            "dest": "search-seasons/index.js" 
+        },
+        { 
+            "src": "/?msg=(.*)",
+            "dest": "msg4admin/index.js" 
+        }
+    ],
+    "builds":[
+        {
+            "src":"package.json",
+            "use":"@now/static-build"
+        },
+        { 
+            "src": "index.js",
+            "use": "@now/node"
+        },
+        { 
+            "src": "search/index.js",
+            "use": "@now/node"
+        },
+        { 
+            "src": "search-api/index.js",
+            "use": "@now/node"
+        },
+        { 
+            "src": "search-seasons/index.js",
+            "use": "@now/node"
+        },
+        { 
+            "src": "search-episodes/index.js",
+            "use": "@now/node"
+        },
+        { 
+            "src": "adede/index.js",
+            "use": "@now/node"
+        },
+        { 
+            "src": "msg4admin/index.js",
+            "use": "@now/node"
+        }
+    ]
+}

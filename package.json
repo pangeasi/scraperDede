@@ -1,11 +1,22 @@
 {
   "scripts": {
     "now-build": "next build && next export -o dist",
-    "now-dev": "next -p $PORT"
+    "now-dev": "next -p $PORT",
+    "start": "nodemon --exec babel-node --presets env,stage-2 index.js"
   },
   "dependencies": {
+    "antd": "^3.18.1",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "jsdom": "^15.1.0",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1"
   }
 }
