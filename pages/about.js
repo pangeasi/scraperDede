@@ -28,7 +28,7 @@ class AboutPage extends Component {
     return (
       <Layout title={'About'}>
         <div className="container">
-          <div>Esta aplicación esta en desarrollo, por favor si encuentras algun error comunicamelo</div>
+          <div>Esta aplicación esta en desarrollo, por favor si encuentras algun error comunicamelo.</div>
           <div>
             <textarea value={this.state.message} rows={5} onChange={(e) => this.setState({message: e.target.value})}></textarea>
             <button onClick={() => this.send()}>enviar</button>
