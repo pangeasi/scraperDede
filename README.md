@@ -6,4 +6,4 @@ Este repo fue creado como proyecto final de curso, partio de todo el conocimient
 
 Mediante scraping y consultas a APIs externas consigue encontrar enlaces, para después poder visualizar pelis o series.
 
-![alt web](https://raw.githubusercontent.com/pangease/scraperDede/master/web.png)
+![alt web](https://raw.githubusercontent.com/pangeasi/scraperDede/master/web.png)
