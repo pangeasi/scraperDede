@@ -1,13 +1,13 @@
 const express = require('express')
 const request = require('request')
 const cors = require('cors')
-const { THEMOVIEDB_API_TOKEN } = require('../config')
+const cfg = require('../config')
 
 const app = express()
 app.use(cors())
 
 app.get('*', async (req,res)=>{
-    const url = `https://api.themoviedb.org/3/tv/${req.query.id}/season/${req.query.s}?api_key=${THEMOVIEDB_API_TOKEN}&language=es-ES`
+    const url = `https://api.themoviedb.org/3/tv/${req.query.id}/season/${req.query.s}?api_key=${cfg.THEMOVIEDB_API_TOKEN}&language=es-ES`
 
     request({
         url,

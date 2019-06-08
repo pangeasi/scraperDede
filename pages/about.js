@@ -33,9 +33,12 @@ class AboutPage extends Component {
             <textarea value={this.state.message} rows={5} onChange={(e) => this.setState({message: e.target.value})}></textarea>
             <button onClick={() => this.send()}>enviar</button>
           </div>
+          <br/>
           <div>
             <h3><i>Novedades:</i></h3>
             <ul>
+              <li>Se puede ver el video desde la propia aplicación sin salir, utilizando el propio reproductor del servidor si lo tuviera</li>
+              <li>ahora se comprueba cada enlace si esta disponible <span style={{ color: 'green' }}>✔</span> o caido <span style={{ color: 'red' }}>❌</span></li>
               <li>Estilos mejorados responsive para mobile, tablet, desktop</li>
               <li>Añadida la calidad de sonido</li>
               <li>Añadida la calidad de video</li>

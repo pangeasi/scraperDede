@@ -1,7 +1,7 @@
 const express = require('express')
 const request = require('request')
 const cors = require('cors')
-const { THEMOVIEDB_API_TOKEN } = require('../config')
+const cfg = require('../config')
 
 const app = express()
 app.use(cors())
@@ -30,7 +30,7 @@ app.get('*', async (req,res)=>{
     }
 
     const decodeTerm = replacer()(decodeURIComponent(req.query.term))
-    const url = `https://api.themoviedb.org/3/search/multi?api_key=${THEMOVIEDB_API_TOKEN}&language=es-ES&query=${decodeTerm}&page=1&include_adult=false`
+    const url = `https://api.themoviedb.org/3/search/multi?api_key=${cfg.THEMOVIEDB_API_TOKEN}&language=es-ES&query=${decodeTerm}&page=1&include_adult=false`
     
     request({
         url,

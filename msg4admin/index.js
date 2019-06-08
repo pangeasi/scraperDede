@@ -1,7 +1,7 @@
 const express = require('express')
 const request = require('request')
 const cors = require('cors')
-const { TELEGRAM_TOKEN } = require('../config')
+const cfg  = require('../config')
 
 const app = express()
 app.use(cors())
@@ -11,7 +11,7 @@ app.get('*', async (req,res)=>{
     const message = encodeURIComponent(`mensaje: ${decodeTerm}`)
 
     request({
-        url: `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage?chat_id=360762343&text=${message}`,
+        url: `https://api.telegram.org/bot${cfg.TELEGRAM_TOKEN}/sendMessage?chat_id=360762343&text=${message}`,
         method: 'get',
     },(err,response,body) => {
         if (!err && response.statusCode == 200) {

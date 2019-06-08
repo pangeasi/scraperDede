@@ -2,7 +2,7 @@
 const express = require('express')
 const request = require('request')
 const cors = require('cors')
-const { MASTODON_TOKEN } = require('../config')
+const cfg = require('../config')
 
 const app = express()
 app.use(cors())
@@ -10,7 +10,7 @@ app.use(cors())
 
 const addAuthorizationHeader = () => {
     let headers= {}
-    headers.Authorization = "Bearer " + MASTODON_TOKEN;
+    headers.Authorization = "Bearer " + cfg.MASTODON_TOKEN;
     return headers;
 }
 
