@@ -11,6 +11,7 @@ Mediante scraping y consultas a APIs externas consigue encontrar enlaces, para d
 - [Introducción](#introducción)
 - [Instalación](#instalación)
 - [Despliegue](#despliegue)
+- [APIs](#apis)
 
 ---
 
@@ -28,11 +29,80 @@ El funcionamiento es simple; el usuario introduce un termino en el input de busq
 
 ## Instalación
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+### Requerimientos:
 
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+Para la instalación y despliegue son necesarias algunos tokens a APIs y el cli de now
 
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+#### Instalando Now de zeit.co
+sigue esta guía para la instalación de now: https://zeit.co/download
+
+o simplemente, ejecuta:
+```curl -sfLS https://zeit.co/download.sh | sh
+```
+
+#### APIs necesarias:
+- [TMDB](https://www.themoviedb.org/)
+- [Telegram](https://core.telegram.org/)
+
+#### Dependencias utilizadas:
+
+- antd
+- request
+- cheerio
+- express
+- next
+- node-sass
+- @zeit/next-sass
+- react
+- react-dom
+- cors
+
+### Proceso de instalación
+
+Descarga el repo:
+
+```git clone https://github.com/pangeasi/scraperDede.git
+```
+
+Crea un archivo ```config.js``` y editalo con tus claves:
+
+```module.exports = {
+    cookie: [
+        {name: 'PHPSESSID',
+        value: '',
+        domain: '',
+        path: '/',
+        expires: 1605376742.173697,
+        size: 35,
+        httpOnly: true,
+        secure: false,
+        session: false }
+        ],
+        TELEGRAM_TOKEN: 'YOUR_KEY',
+        MASTODON_TOKEN: 'YOUR_KEY',
+        THEMOVIEDB_API_TOKEN: 'YOUR_KEY',
+        LOGIN_VERYSTREAM_API: 'YOUR_KEY',
+        KEY_VERYSTREAM_API: 'YOUR_KEY'
+}
+```
+
+
+Instala dependencias:
+```npm install
+```
+o
+```yarn install
+```
+
+Ejecuta estos dos scripts:
+
+para levantar next en modo desarrollo en el puerto 3000
+```yarn now-dev 3000
+```
+y para el arrancar el servidor en local imitando FaaS
+```yarn start
+```
+
 
 ## Despliegue
 
@@ -41,3 +111,4 @@ It is a long established fact that a reader will be distracted by the readable c
 ## APIs
 
 - [TMDB](https://www.themoviedb.org/)
+- [Telegram](https://core.telegram.org/)
