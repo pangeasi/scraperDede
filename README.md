@@ -37,7 +37,8 @@ Para la instalación y despliegue son necesarias algunos tokens a APIs y el cli 
 sigue esta guía para la instalación de now: https://zeit.co/download
 
 o simplemente, ejecuta:
-```curl -sfLS https://zeit.co/download.sh | sh
+```
+curl -sfLS https://zeit.co/download.sh | sh
 ```
 
 #### APIs necesarias:
@@ -61,12 +62,14 @@ o simplemente, ejecuta:
 
 Descarga el repo:
 
-```git clone https://github.com/pangeasi/scraperDede.git
+```
+git clone https://github.com/pangeasi/scraperDede.git
 ```
 
 Crea un archivo ```config.js``` y editalo con tus claves:
 
-```module.exports = {
+```
+module.exports = {
     cookie: [
         {name: 'PHPSESSID',
         value: '',
@@ -88,19 +91,23 @@ Crea un archivo ```config.js``` y editalo con tus claves:
 
 
 Instala dependencias:
-```npm install
+```
+npm install
 ```
 o
-```yarn install
+```
+yarn install
 ```
 
 Ejecuta estos dos scripts:
 
 para levantar next en modo desarrollo en el puerto 3000
-```yarn now-dev 3000
+```
+yarn now-dev 3000
 ```
 y para el arrancar el servidor en local imitando FaaS
-```yarn start
+```
+yarn start
 ```
 
 
