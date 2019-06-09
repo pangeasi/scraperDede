@@ -2,7 +2,7 @@
 
 Este repo fue creado como proyecto final de curso, partio de todo el conocimiento aportado durante los dos años de aprendizaje, además del periodo de prácticas dónde aprendí React y Next, como otras tecnologías o conceptos entre ellas scraping, serverless, Node.js
 
-⭐ <a href="https://scraperdede.now.sh">craperDede</a>
+⭐ <a href="https://scraperdede.now.sh" target="_blank">scraperDede</a>
 
 **⚠ Esta aplicación web busca enlaces, no almacena ningun medio audiovisual, ni tiene una base de datos... ⚠**
 
