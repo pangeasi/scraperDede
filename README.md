@@ -23,7 +23,7 @@ En sí, la funcionalidad de esta aplicación consiste en la busqueda y extracci�
 <p align="center">
     <img src="https://raw.githubusercontent.com/pangeasi/scraperDede/master/web.png" alt="web" width="400"/>
 </p>
-El funcionamiento es simple; el usuario introduce un termino en el input de busqueda y en cuanto comienza a introducir carácteres hace una petición a [TMDB][1] una API externa que administra una base de datos de películas y series inmensa, de ahi obtiene respuesta con el resultado de todas las coincidencias obtenidas. Los resultados obviamente pueden ser o películas o series y dependiendo de una otra ira mostrando información diferente al momento de seleccionar un resultado, como por ejemplo la sinopsis, temporadas, episodios y por último la lista de enlaces a servidores de streaming y un reproductor para ver el contenido directamente.
+El funcionamiento es simple; el usuario introduce un termino en el input de busqueda y en cuanto comienza a introducir carácteres hace una petición a [TheMovieDB][1] una API externa que administra una base de datos de películas y series inmensa, de ahi obtiene respuesta con el resultado de todas las coincidencias obtenidas. Los resultados obviamente pueden ser o películas o series y dependiendo de una otra ira mostrando información diferente al momento de seleccionar un resultado, como por ejemplo la sinopsis, temporadas, episodios y por último la lista de enlaces a servidores de streaming y un reproductor para ver el contenido directamente.
 
 [1]: https://www.themoviedb.org/
 
