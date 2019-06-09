@@ -2,19 +2,27 @@
 
 Este repo fue creado como proyecto final de curso, partio de todo el conocimiento aportado durante los dos años de aprendizaje, además del periodo de prácticas dónde aprendí React y Next, como otras tecnologías o conceptos entre ellas scraping, serverless, Node.js
 
-
-
 **⚠ Esta aplicación web busca enlaces, no almacena ningun medio audiovisual, ni tiene una base de datos... ⚠**
 
 Mediante scraping y consultas a APIs externas consigue encontrar enlaces, para después poder visualizar su contenido.
+
+---
 
 - [Introducción](#introducción)
 - [Instalación](#instalación)
 - [Despliegue](#despliegue)
 
+---
+
 ## Introducción
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+La realización de este proyecto ha sido posible gracias al conocimiento aportado en el curso de desarrollo de aplicaciones web, cada linea de código ha tenido borradores, pruebas y demasiadas horas de investigación previas al resultado obtenido. El proceso ha sido emocionante y muy gratificante.
+
+En sí, la funcionalidad de esta aplicación consiste en la busqueda y extracción de enlaces a servidores de streaming, que usuarios llamados uloaders comparten con infinidad de comunidades para que sus usuarios puedan visualizar el contenido audiovisual, en varias calidades, idiomas y/o subtítulos.
+
+El funcionamiento es simple; el usuario introduce un termino en el input de busqueda y en cuanto comienza a introducir carácteres hace una petición a [TMDB](https://www.themoviedb.org/) una API externa que administra una base de datos de películas y series inmensa, de ahi obtiene respuesta con el resultado de todas las coincidencias obtenidas. Los resultados obviamente pueden ser o películas o series y dependiendo de una otra ira mostrando información diferente al momento de seleccionar un resultado, como por ejemplo la sinopsis, temporadas, episodios y por último la lista de enlaces a servidores de streaming y un reproductor para ver el contenido directamente.
+
+
 
 ## Instalación
 
@@ -34,4 +42,4 @@ It is a long established fact that a reader will be distracted by the readable c
 
 
 
-![alt web](https://raw.githubusercontent.com/pangeasi/scraperDede/master/web.png)
+![alt web](https://raw.githubusercontent.com/pangeasi/scraperDede/master/web.png =529x542 )
