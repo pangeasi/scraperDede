@@ -8,8 +8,8 @@ Este repo fue creado como proyecto final de curso, partio de todo el conocimient
 
 Mediante scraping y consultas a APIs externas consigue encontrar enlaces, para después poder visualizar su contenido.
 
-- [Introducción](#introduccion)
-- [Instalación](#instalacion)
+- [Introducción](#introducción)
+- [Instalación](#instalación)
 - [Despliegue](#despliegue)
 
 ## Introducción
