@@ -11,7 +11,9 @@ Mediante scraping y consultas a APIs externas consigue encontrar enlaces, para d
 - [Introducción](#introducción)
 - [Instalación](#instalación)
 - [Despliegue](#despliegue)
+- [Explicación](#explicación)
 - [APIs](#apis)
+- [Presentación](#presentación)
 
 ---
 
@@ -68,7 +70,7 @@ git clone https://github.com/pangeasi/scraperDede.git
 
 Crea un archivo ```config.js``` y editalo con tus claves:
 
-```
+```javascript
 module.exports = {
     cookie: [
         {name: 'PHPSESSID',
@@ -113,9 +115,55 @@ yarn start
 
 ## Despliegue
 
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+Para desplegar en now, puedes hacerlo directamente a pruducción o con tu rama a fase de pruebas
+
+```
+now
+```
+para el despliegue a producción, recuerda cambiar el alias en ```now.json```
+```
+now --target production
+```
+
+## Explicación
+
+### ¿Cómo funciona?
+
+Una vez llevado a producción, la aplicación funciona en serverless, apoyandose en las function lambdas de now, sus diferentes funciones son apis montadas con express que recepcionan mediante query strings los parametros necesarios, al hacerse la petición se origina la invocación de la función y esta responde retornando el resultado.
+
+#### Functions lambdas:
+
+estas son las diferences funciones que demanda el cliente:
+
+- **/search , /search-seasons y /search-episode**
+
+```./search/index.js```
+```./search-seasons/index.js```
+```./search-episodes/index.js```
+
+Estas funciones se nutren de la API TheMovieDB, las cual hace consulta mediante el término marcado y retornando la información de los resultados.
+
+- **/adede**
+
+```./adede/index.js```
+
+La función que hace scraping a otra página y comprueba su disponibilida, mediante la libreria ***request***, pide el cuerpo de la página inyectando las cookies en la solicitud, permitiendo el acceso y capurando los enlaces. Una vez obtenidos son comprobados con ***cheerio*** en un bucle, si esta disponible o ha caido.
+
+- **/msg4admin**
+```./msg4admin/index.js```
+
+Con esta funcion, la aplicación se sirve de puente para comunicar mediante mensajes de chat a un bot de **Telegram**, utilizando su API; es utilizada cuando un usuario busca algo, se envia el ID al bot ó cuando se utiliza el text area del apartado de desarrollo ```about.js``` para enviar un mensaje al bot.
+
+- **/search-api**
+```./search-api/index.js```
+
+Función en desarrollo, que pretende usar la API de Mastodon a modo de base de datos.
 
 ## APIs
 
 - [TMDB](https://www.themoviedb.org/)
 - [Telegram](https://core.telegram.org/)
+
+## Presentación
+
+<a href="https://docs.google.com/presentation/d/1EXmQpOzSnqw4zFiHwJApAxHuK7HjXiqyv6ko8wEfdi8/edit?usp=sharing">Presentación aportada del proyecto</a>
