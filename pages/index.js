@@ -66,7 +66,7 @@ export default class IndexPage extends Component {
       if (!media[i].serie) {
         await fetch(`${protocol}://${host}${port}/search-seasons/?term=${search}`)
           .then(data => data.json())
-          .then(d => {
+          .then(d => {           
             media[i].serie = d
           })
       }
@@ -168,6 +168,7 @@ export default class IndexPage extends Component {
             fetch(`${protocol}://${host}${port}/search/?term=${this.state.inputSearch}`)
               .then(data => data.json())
               .then(d => {
+                console.log(d);
                 this.setState({
                   media: d.results ? d.results : [],
                   noResults: d.results.length < 1

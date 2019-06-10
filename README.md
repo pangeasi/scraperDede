@@ -16,6 +16,7 @@ Mediante scraping y consultas a APIs externas consigue encontrar enlaces, para d
 - [Explicación](#explicación)
 - [APIs](#apis)
 - [Presentación](#presentación)
+- [Enlaces de interés](#enlaces-de-interés)
 
 ---
 
@@ -23,7 +24,7 @@ Mediante scraping y consultas a APIs externas consigue encontrar enlaces, para d
 
 La realización de este proyecto ha sido posible gracias al conocimiento aportado en el curso de desarrollo de aplicaciones web, cada linea de código ha tenido borradores, pruebas y demasiadas horas de investigación previas al resultado obtenido. El proceso ha sido emocionante y muy gratificante.
 
-En sí, la funcionalidad de esta aplicación consiste en la busqueda y extracción de enlaces a servidores de streaming, que usuarios llamados uloaders comparten con infinidad de comunidades para que sus usuarios puedan visualizar el contenido audiovisual, en varias calidades, idiomas y/o subtítulos.
+En sí, la funcionalidad de esta aplicación consiste en la busqueda y extracción de enlaces a servidores de streaming, que usuarios llamados uploaders comparten con infinidad de comunidades para que sus usuarios puedan visualizar el contenido audiovisual, en varias calidades, idiomas y/o subtítulos.
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/pangeasi/scraperDede/master/web.png" alt="web" width="400"/>
@@ -169,3 +170,34 @@ Función en desarrollo, que pretende usar la API de Mastodon a modo de base de d
 ## Presentación
 
 <a href="https://docs.google.com/presentation/d/1EXmQpOzSnqw4zFiHwJApAxHuK7HjXiqyv6ko8wEfdi8/edit?usp=sharing">Presentación aportada del proyecto</a>
+
+## Enlaces de interés
+
+## NextJS
+- <a href="https://nextjs.org/">Web de Next</a>
+- <a href="https://github.com/zeit/next.js">github</a>
+- <a href="https://github.com/zeit/next.js/tree/canary/examples">ejemplos prácticos</a>
+- <a href="https://nextjs.org/docs">Documentación</a>
+
+## FaaS
+
+### Now
+
+- <a href="https://zeit.co/now">Now</a>
+- <a href="https://zeit.co/docs/v2/getting-started/introduction-to-now">Documentación de now</a>
+
+### Proveedores de FaaS
+
+- <a href="https://aws.amazon.com/lambda/">AWS Lambda</a>
+- <a href="https://cloud.google.com/functions/">Google cloud functions</a>
+- <a href="https://azure.microsoft.com/en-us/services/functions/">Azure functions</a>
+- <a href="https://zeit.co">Zeit</a>
+- <a href="https://console.ng.bluemix.net/openwhisk/">IBM Bluemix</a>
+
+### Para montar tu propio FaaS
+
+- <a href="http://open.iron.io/">Iron functions</a>
+- <a href="https://wiki.openstack.org/wiki/Picasso">Openstack Picasso</a>
+- <a href="http://fission.io/">Fission</a>
+- <a href="https://openwhisk.incubator.apache.org/">Apache Openwhisk</a>
+- <a href="https://www.openfaas.com/">OpenFaaS</a>
