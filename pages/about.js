@@ -1,10 +1,7 @@
 import { Component } from 'react'
 import { Layout } from '../components/layout';
+import { protocol, host, port } from '../utils/functions';
 
-const isDevelopment = process.env.NODE_ENV === 'development'
-const protocol = isDevelopment ? 'http' : 'https'
-const host = isDevelopment ? 'localhost' : 'scraperdede.now.sh'
-const port = isDevelopment ? ':4000' : ''
 
 class AboutPage extends Component {
   constructor(props){

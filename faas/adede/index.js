@@ -3,8 +3,7 @@ const express = require('express')
 const request = require('request')
 const cors = require('cors')
 const cheerio = require('cheerio')
-const cfg = require('../config')
-
+const cfg = require('../../config')
 
 
 const cookiesDixmax = () => cfg.cookie

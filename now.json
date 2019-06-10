@@ -5,27 +5,27 @@
     "routes": [
         { 
             "src": "/?term=(.*)",
-            "dest": "search/index.js" 
+            "dest": "faas/search/index.js" 
         },
         { 
             "src": "/?term=(.*)&is=(.*)&s=(.*)&e=(.*)",
-            "dest": "adede/index.js" 
+            "dest": "faas/adede/index.js" 
         },
         { 
             "src": "/?id=(.*)",
-            "dest": "search-api/index.js" 
+            "dest": "faas/search-api/index.js" 
         },
         { 
             "src": "/?id=(.*)&s=(.*)",
-            "dest": "search-episodes/index.js" 
+            "dest": "faas/search-episodes/index.js" 
         },
         { 
             "src": "/?term=(.*)",
-            "dest": "search-seasons/index.js" 
+            "dest": "faas/search-seasons/index.js" 
         },
         { 
             "src": "/?msg=(.*)",
-            "dest": "msg4admin/index.js" 
+            "dest": "faas/msg4admin/index.js" 
         }
     ],
     "builds":[
@@ -34,31 +34,27 @@
             "use":"@now/static-build"
         },
         { 
-            "src": "index.js",
+            "src": "faas/search/index.js",
             "use": "@now/node"
         },
         { 
-            "src": "search/index.js",
+            "src": "faas/search-api/index.js",
             "use": "@now/node"
         },
         { 
-            "src": "search-api/index.js",
+            "src": "faas/search-seasons/index.js",
             "use": "@now/node"
         },
         { 
-            "src": "search-seasons/index.js",
+            "src": "faas/search-episodes/index.js",
             "use": "@now/node"
         },
         { 
-            "src": "search-episodes/index.js",
+            "src": "faas/adede/index.js",
             "use": "@now/node"
         },
         { 
-            "src": "adede/index.js",
-            "use": "@now/node"
-        },
-        { 
-            "src": "msg4admin/index.js",
+            "src": "faas/msg4admin/index.js",
             "use": "@now/node"
         }
     ]

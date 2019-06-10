@@ -13,5 +13,5 @@ export const languageFlag = (lang) => {
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 export const protocol = isDevelopment ? 'http' : 'https'
-export const host = isDevelopment ? 'localhost' : 'scraperdede.now.sh'
+export const host = isDevelopment ? 'localhost' : 'scraperdede.now.sh/faas'
 export const port = isDevelopment ? ':4000' : ''

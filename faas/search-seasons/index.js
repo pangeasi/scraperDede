@@ -1,24 +1,23 @@
 const express = require('express')
 const request = require('request')
 const cors = require('cors')
-const cfg  = require('../config')
+const cfg = require('../../config')
 
 const app = express()
 app.use(cors())
 
 app.get('*', async (req,res)=>{
-    const decodeTerm = decodeURIComponent(req.query.msg)
-    const message = encodeURIComponent(`mensaje: ${decodeTerm}`)
+    const url = `https://api.themoviedb.org/3/tv/${req.query.term}?api_key=${cfg.THEMOVIEDB_API_TOKEN}&language=es-ES`
 
     request({
-        url: `https://api.telegram.org/bot${cfg.TELEGRAM_TOKEN}/sendMessage?chat_id=360762343&text=${message}`,
+        url,
         method: 'get',
     },(err,response,body) => {
         if (!err && response.statusCode == 200) {
             let info = body.includes('{') ? JSON.parse(body) : []
             
             res.set('content-type', 'application/json')
-            res.status(200).send({})
+            res.status(200).send(info)
           }
     })
 })
