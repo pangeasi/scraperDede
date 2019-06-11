@@ -1,4 +1,5 @@
 
+const utils = require('../../utils/validators')
 const express = require('express')
 const request = require('request')
 const cors = require('cors')
@@ -34,44 +35,17 @@ app.get('*', (req, res) => {
         formData
     }, async(err, response, body) => {
         if (!err && response.statusCode == 200) {
-            
             let info = body.includes('{') ? JSON.parse(body) : []
             const results = []
-            if(info.length > 0){
-                
-                for (const x of info) {
-                    if (x.link.includes('openload')
-                        || x.link.includes('verystream')
-                        || x.link.includes('streamango')
-                        || x.link.includes('vidoza')
-                        || x.link.includes('streamcherry')
-                        || x.link.includes('flix555')
-                        || x.link.includes('streamplay')
-                        || x.link.includes('clipwatching')
-                        || x.link.includes('streamcloud')
-                        || x.link.includes('flashx')
-                        || x.link.includes('powvideo')
-                        || x.link.includes('gamovideo')) {
 
+            if(info.length > 0){
+                for (const x of info) {
+                    if (utils.validServer(x)) {
                         results.push(new Promise((resolve, reject) => {
                             request(x.link, (error, response, body) => {
-
-                                if (error) reject(error)
+                                error && reject(error)
                                 let $ = cheerio.load(body)
-                                let statusText = $('.content-blocked > h3').text()
-
-                                let status = statusText === 'We’re Sorry!'
-                                    || statusText === 'File not found! Much sorry!'
-                                    || $('h1').text() === 'Sorry!'
-                                    || $('.text-center').text().includes('Reason for deletion:')
-                                    || $('#container').text().includes('Reason for deletion:')
-                                    || $('.container').text().includes('File Not Found')
-                                    || $('div > img').attr('alt') === '404 File not found!'
-                                    || $('h1').text() === 'File Not Found'
-                                    || $('center').text().includes('File Not Found')
-                                    || $('body').text().includes('File Not Found')
-                                    || $('#cuerpo').text().includes('Copyright Infringement')
-                                    || $('body').text().includes('Forbidden')
+                                const status = utils.checkStatus($)
 
                                 resolve({
                                     link: x.link,
@@ -88,8 +62,6 @@ app.get('*', (req, res) => {
                         }))
                     }
                 }
-                
-    
             }
             res.set('content-type', 'application/json')
             res.status(200).send(await Promise.all(results))
