@@ -11,7 +11,7 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "next": "latest",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "react": "latest",
     "react-dom": "latest",
     "request": "^2.88.0"
